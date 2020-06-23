@@ -5,7 +5,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+  { path: 'bookticket', loadChildren: './bookticket/bookticket.module#BookticketPageModule' },
+  { path: 'bookticket/:id', loadChildren: './bookticket/bookticket.module#BookticketPageModule' }
 ];
 @NgModule({
   imports: [

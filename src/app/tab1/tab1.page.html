@@ -1,41 +1,52 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab One
-    </ion-title>
+  <ion-toolbar color= "light">
+    <ion-title><b>Welcome to the New York Zoo!!!</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
+
+  <ion-card-title padding>
+    <h2>Discover your wild side!!!</h2>
+    <h4>The New York Zoo is part of an effort to save wildlife that began 120 years ago. Our conservationists work in forests, deserts, mountains, plains, and oceans across the globe.
+        When you visit the New York Zoo, we hope that you will be amazed by the wildlife you encounter, 
+        and inspired to help protect our earth for future generations of humans and wildlife.</h4>
+  </ion-card-title>
+  <ion-slides [options]="slideOptions" pager="true" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)">
+    <ion-slide *ngFor="let m of myPictures">
+      <ion-card>
+
+        <img src="{{m.image}}">
+
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
+
+<ion-card >
+   <img src="./assets/img/banner-background2.jpg"/>
+   <div class="card-title"><i><u>Show Timings</u></i></div>
+  <div class="card-subtitle">
+  <ion-list>
+      <ion-item><ion-label >SEA-LION FEEDING: 12:30pm</ion-label></ion-item><br>
+      <ion-item><ion-label >PENGUIN FEEDING: 2:30pm</ion-label></ion-item><br>
+      <ion-item><ion-label >SEA-LION FEEDING: 3:00pm</ion-label></ion-item><br>
+      <ion-item><ion-label>BEE-EATER FEEDING: 4:00pm </ion-label></ion-item>
     </ion-list>
+ </div>
+</ion-card>
+
+<ion-card>
+    <img src="./assets/img/banner-background.jpg"/>
+  <div class="card-title" ><i><u>Book Tickets</u></i></div>
+  <div class="card-subtitle">     
+     <ion-button expand="round" routerLink="/bookticket" color= "shade">Book the show</ion-button><br>
+     <!--<ion-button expand="round" (click)="goToBookTicketPage()" color= "shade" >Book the show NavigateByUrl Way</ion-button><br>
+     <ion-button expand="round"  routerLink="/bookticket/refNo3467528" color= "shade" >Book the show Pass Data Using Id Way</ion-button><br>-->
+     <!--<b><a href="/bookticket" router-direction="forward"  color="warning">BOOK THE SHOW HREF WAY (gives error)</a></b><br>-->
+  </div>
+
+</ion-card>
+
 </ion-content>
