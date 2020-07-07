@@ -1,7 +1,0 @@
-{
-  "name": "zooweb",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
